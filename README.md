@@ -2,7 +2,7 @@
 
 An interactive educational application designed to enhance core values learning for primary school students. Through engaging activities such as quizzes, pair and match, and explore the scene, this app aims to make learning both fun and effective.
 
-- **Project description:** [schoolapp.sg/project/casuarina-primary-school-learning-kiosk//](https://schoolapp.sg/project/casuarina-primary-school-learning-kiosk/)
+- **Project description:** [schoolapp.sg/project/casuarina-primary-school-learning-kiosk/](https://schoolapp.sg/project/casuarina-primary-school-learning-kiosk/)
 - **Game Link**: [demo.schoolapp.sg/corevalue/](https://demo.schoolapp.sg/corevalue/)
     
 ![Game Screenshot](./assets/images/Homepage-Background.png) 
