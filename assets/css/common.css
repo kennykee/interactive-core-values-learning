@@ -1,0 +1,751 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+}
+.tile-thumbnail {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden; 
+    -ms-transform: translateZ(0); /* IE 9 */
+    -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+    transform: translateZ(0);
+    user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.full-block{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.hide{
+    display: none;
+}
+.no-pointer{
+    pointer-events: none;
+}
+#container{
+    width: 100vw;
+    transform-origin: left top;
+}
+#scale-container{
+    transform-origin: left top;
+    transition-timing-function: ease-in-out;    
+}
+#page-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: left top;
+}
+#audio-player{
+    display: none;
+}
+.tile-parent{
+    position: absolute;
+}
+.home-volume-container{
+    position: absolute;
+    width: 277.7px;
+}
+.home-volume-inner{
+    position: absolute;
+}
+.home-button{
+    position: absolute;
+    width: 134px;
+    height: 145px;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+.volume-button{
+    position: absolute;
+    width: 134px;
+    height: 145px;
+    top: 0px;
+    left: 135px;
+    z-index: 100;
+}
+.volume-button:before, .volume-button:after {
+    position: absolute;
+    left: 45%;
+    content: ' ';
+    height: 134px;
+    width: 9px;
+    background-color: red;
+    opacity: 0;
+}
+.volume-muted.volume-button:after, .volume-muted.volume-button:before{
+    opacity: 1;
+}
+.volume-button:before {
+    transform: rotate(45deg);
+}
+.volume-button:after {
+    transform: rotate(-45deg);
+}
+.back-button{
+    position: absolute;
+    width: 157.6px;
+    height: 152.8px;
+    top: 0px;
+    left: 1762.4px;
+    z-index: 100;
+}
+.home-know-value-button{
+    position: absolute;
+    width: 1189px;
+    height: 271px;
+    top: 230px;
+    left: 368px; 
+}
+.home-journey-button{
+    position: absolute;
+    width: 1189px;
+    height: 271px;
+    top: 631px;
+    left: 368px;
+}
+.school-value-mean-play-button{
+    position: absolute;
+    width: 594px;
+    height: 139px;
+    top: 746px;
+    left: 306px;
+}
+.school-value-live-play-button{
+    position: absolute;
+    width: 594px;
+    height: 139px;
+    top: 746px;
+    left: 1018px;
+}
+.school-value-mean-start-button{
+    position: absolute;
+    width: 597px;
+    height: 143px;
+    top: 808px;
+    left: 661px;
+}
+.leaf-container{
+    position: absolute;
+    width: 1540.528px;
+    height: 699.405px;
+    top: 283.688px;
+    left: 190.125px;
+}
+.leaf-inner-container{
+    height: 220px;
+    width: 25%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    animation: leaf-initial-animation 1000ms;
+}
+@keyframes leaf-initial-animation{
+    0% { transform: rotateY(0deg) scale(0,0); }
+    100% { transform: rotateY(360deg) scale(1,1); }
+}
+.leaf{
+    position: absolute;
+    width: 355.6px;
+    height: 198.9px;
+    filter: drop-shadow(5px 7px 1px #00000096);
+    -webkit-filter: drop-shadow(5px 7px 1px #00000096);
+    -moz-filter: drop-shadow(5px 7px 1px #00000096);
+    backface-visibility: hidden;
+}
+.leaf-back{
+    position: absolute;
+    width: 355.6px;
+    height: 198.9px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+.leaf-answer{
+    position: absolute;
+    width: 355.6px;
+    height: 198.9px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    z-index: 100;
+    opacity: 0;
+    animation: leaf-answer-animation 100ms linear 1s forwards;
+}
+.leaf-back, .leaf-answer{
+    filter: drop-shadow(5px 7px 1px #00000096);
+    -webkit-filter: drop-shadow(5px 7px 1px #00000096);
+    -moz-filter: drop-shadow(5px 7px 1px #00000096);
+}
+@keyframes leaf-answer-animation{
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.rotateY180{
+    transform: rotateY(180deg);
+}
+.correct-animate img{
+    animation: leaf-correct-animation 600ms cubic-bezier(0.455, 0.03, 0.515, 0.955) 600ms;
+}
+@keyframes leaf-correct-animation{
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100%{ transform: scale(1); }
+}
+.school-value-choice-container{
+    position: absolute;
+    height: 160px;
+    width: 1920px;
+    top: 868px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+}
+.school-value-choice-inner-container{
+    height: 160px;
+    width: 300px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-family: dimbo;
+    font-size: 57px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.school-value-correct-popup{
+    position: absolute;
+    width: 1217px;
+    height: 619px;
+    top: 170px;
+    left: 352px;
+    transform: scale(0);
+    opacity: .3;
+    transition: all 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.school-value-incorrect-popup{
+    position: absolute;
+    width: 1217px;
+    height: 619px;
+    top: 170px;
+    left: 352px;
+    transform: scale(0);
+    opacity: .3;
+    transition: all 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.school-value-show-popup{
+    transform: scale(1);
+    opacity: 1;
+    transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.school-value-correct-popup .next-button, 
+.school-value-incorrect-popup .try-again-button{
+    position: absolute;
+    width: 590px;
+    height: 134px;
+    top: 452px;
+    left: 313px;
+}
+.game-one-ending-banner{
+    position: absolute;
+    width: 1244px;
+    height: 686px;
+    top: 109px;
+    left: 338px;
+    opacity: .3;
+    transform: scale(0);
+    animation: game-one-ending-banner-animation 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 100ms forwards;
+}
+.game-one-ending-home-button{
+    position: absolute;
+    width: 615px;
+    height: 179px;
+    top: 795px;
+    left: 653px;
+    opacity: .3;
+    transform: scale(0);
+    animation: game-one-ending-banner-animation 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms forwards;
+}
+.game-one-perfect-match{
+    position: absolute;
+    width: 1216px;
+    height: 610px;
+    top: 315px;
+    left: 352px;
+    opacity: .3;
+    transform: scale(0);
+    transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.game-one-perfect-match-home-button{
+    position: absolute;
+    width: 593px;
+    height: 139px;
+    left: 311px;
+    top: 457px;
+    z-index: 100;
+}
+@keyframes game-one-ending-banner-animation{
+    0% { transform: scale(0); opacity: 0.3; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.journey-home-play-button{
+    position: absolute;
+    width: 594px;
+    height: 135px;
+    top: 915px;
+    left: 642px;
+}
+.green-boy{
+    position: absolute;
+    width: 385px;
+    height: 601px;
+    top: 225px;
+    left: 155px;
+}
+.red-girl{
+    position: absolute;
+    width: 412px;
+    height: 590px;
+    top: 151px;
+    left: 540px;
+}
+.yellow-girl{
+    position: absolute;
+    width: 375px;
+    height: 590px;
+    top: 152px;
+    left: 977px;
+}
+.blue-boy{
+    position: absolute;
+    width: 386px;
+    height: 609px;
+    top: 214px;
+    left: 1380px;
+}
+.grayscale-image{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+.selected-character{
+    animation: selected-character-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;
+    transform-origin: bottom;
+}
+.animate-character{
+    animation: selected-character-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transform-origin: bottom;
+}
+@keyframes selected-character-animation{
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+.character-select-play-button{
+    position: absolute;
+    width: 594px;
+    height: 135px;
+    top: 913px;
+    left: 663px;
+}
+.journey-level-play-button{
+    position: absolute;
+    width: 594px;
+    height: 135px;
+    top: 882px;
+    left: 662px;
+}
+.green-bar{
+    background: #44c200;
+    background: -moz-linear-gradient(left, #44c200 0%, #54eb42 53%, #45b000 100%);
+    background: -webkit-linear-gradient(left, #44c200 0%,#54eb42 53%,#45b000 100%);
+    background: linear-gradient(to right, #44c200 0%,#54eb42 53%,#45b000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44c200', endColorstr='#45b000',GradientType=1 );
+}
+.red-bar{
+    background: #c40072;
+    background: -moz-linear-gradient(left, #c40072 0%, #ff00aa 53%, #c9005e 100%);
+    background: -webkit-linear-gradient(left, #c40072 0%,#ff00aa 53%,#c9005e 100%);
+    background: linear-gradient(to right, #c40072 0%,#ff00aa 53%,#c9005e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c40072', endColorstr='#c9005e',GradientType=1 );
+}
+.yellow-bar{
+    background: #c49d00;
+    background: -moz-linear-gradient(left, #c49d00 0%, #ffea00 53%, #c9a100 100%);
+    background: -webkit-linear-gradient(left, #c49d00 0%,#ffea00 53%,#c9a100 100%);
+    background: linear-gradient(to right, #c49d00 0%,#ffea00 53%,#c9a100 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c49d00', endColorstr='#c9a100',GradientType=1 );
+}
+.blue-bar{
+    background: #00aeff;
+    background: -moz-linear-gradient(left, #00aeff 0%, #00d9ff 53%, #00aeff 100%);
+    background: -webkit-linear-gradient(left, #00aeff 0%,#00d9ff 53%,#00aeff 100%);
+    background: linear-gradient(to right, #00aeff 0%,#00d9ff 53%,#00aeff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00aeff', endColorstr='#00aeff',GradientType=1 );
+}
+.question-line{
+    min-height: 112px;
+    font-size: 37.6px;
+    line-height: 48.05px;
+    font-family: dimbo;
+    user-select: none;
+}
+.question-box{
+    opacity: 0;
+}
+.journey-underline{
+    height: 53px;
+}
+.journey-answer-line{
+    color: white;
+    font-family: dimbo;
+    font-size: 38.44px;
+    line-height: 67.27px;
+    user-select: none;
+}
+.green-text{
+    color: #B8FFBE;
+}
+.red-text{
+    color: #FFCCE3;
+}
+.yellow-text{
+    color: #FFF47D;
+}
+.blue-text{
+    color: #7DFBFF;
+}
+.stage-1-shield{
+    position: absolute;
+    width: 299px;
+    height: 327px;
+    top: 164px;
+    left: 119.5px;
+    z-index: 200;
+}
+.stage-1-bar{
+    width: 78px;
+    height: 0px;
+    position: absolute;
+    top: 965px;
+    left: 228px;
+    mix-blend-mode: multiply;
+}
+.stage-1-score{
+    font-family: dimbo;
+    font-size: 61px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 967px;
+    left: 160px;
+    width: 221px;
+}
+.stage-1-question-container{
+    position: absolute;
+    width: 1025px;
+    height: 445px;
+    top: 379px;
+    left: 611px;
+}
+.stage-2-bar{
+    width: 79px;
+    height: 0px;
+    position: absolute;
+    top: 983px;
+    left: 230px;
+    mix-blend-mode: multiply;
+}
+.stage-2-score{
+    font-family: dimbo;
+    font-size: 61px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 985px;
+    left: 160px;
+    width: 221px;
+}
+.stage-2-question-container{
+    position: absolute;
+    width: 1025px;
+    height: 445px;
+    top: 373px;
+    left: 611px;
+}
+.stage-3-bar{
+    width: 79px;
+    height: 0px;
+    position: absolute;
+    top: 977px;
+    left: 223px;
+    mix-blend-mode: multiply;
+}
+.stage-3-score{
+    font-family: dimbo;
+    font-size: 61px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 985px;
+    left: 158px;
+    width: 221px;
+}
+.stage-3-question-container{
+    position: absolute;
+    width: 1025px;
+    height: 445px;
+    top: 369px;
+    left: 611px;
+}
+.journey-correct-label{
+    position: absolute;
+    width: 700px;
+    height: 181px;
+    top: 870px;
+    left: 727px;
+    top: 1080px;
+    transition: all 800ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.journey-incorrect-label{
+    position: absolute;
+    width: 700px;
+    height: 181px;
+    top: 870px;
+    left: 727px;
+    top: 1080px;
+    transition: all 800ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.journey-label-exit-timing{
+    transition: all 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.journey-timer{
+    position: absolute;
+    display: none !important;
+    top: 912px;
+    left: 1434px;
+    font-size: 36px;
+    color: black;
+    font-family: dimbo;
+    width: 90px;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 0;
+}
+.journey-timer-text{
+    position: absolute;
+    z-index: 10;
+}
+.journey-timer-exit{
+    top: 1080px;
+    transition: all 600ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.journey-go-next-level-button,
+.journey-try-again-button{
+    position: absolute;
+    width: 594px;
+    height: 138px;
+    top: 921px;
+    left: 661px;
+}
+.journey-level-success-1-blue{
+    position: absolute;
+    width: 630px;
+    height: 617px;
+    top: 300px;
+    left: 620px;
+    transform: scale(1);
+    transform-origin: bottom;
+    animation: journey-level-end-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;
+}
+@keyframes journey-level-end-animation{
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+.journey-level-success-1-green{
+    position: absolute;
+    width: 635px;
+    height: 617px;
+    top: 300px;
+    left: 620px;
+    transform: scale(1);
+    transform-origin: bottom;
+    animation: journey-level-end-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;
+}
+.journey-level-success-1-red{
+    position: absolute;
+    width: 635px;
+    height: 617px;
+    top: 300px;
+    left: 620px;
+    transform: scale(1);
+    transform-origin: bottom;
+    animation: journey-level-end-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;
+}
+.journey-level-success-1-yellow{
+    position: absolute;
+    width: 635px;
+    height: 617px;
+    top: 300px;
+    left: 620px;
+    transform: scale(1);
+    transform-origin: bottom;
+    animation: journey-level-end-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;
+}
+.journey-level-success-2-blue{
+    position: absolute;
+    width: 518px;
+    height: 632px;
+    top: 304px;
+    left: 713px;
+    transform: scale(1);
+    transform-origin: bottom;
+    animation: journey-level-end-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;
+}
+.journey-level-success-2-green{
+    position: absolute;
+    width: 609px;
+    height: 654px;
+    top: 300px;
+    left: 665px;
+    transform: scale(1);
+    transform-origin: bottom;
+    animation: journey-level-end-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;
+}
+.journey-level-success-2-red{
+    position: absolute;
+    width: 597px;
+    height: 651px;
+    top: 300px;
+    left: 659px;
+    transform: scale(1);
+    transform-origin: bottom;
+    animation: journey-level-end-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;
+}
+.journey-level-success-2-yellow{
+    position: absolute;
+    width: 582px;
+    height: 626px;
+    top: 300px;
+    left: 670px;
+    transform: scale(1);
+    transform-origin: bottom;
+    animation: journey-level-end-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;
+}
+.journey-level-success-3-blue{
+    position: absolute;
+    width: 582px;
+    height: 641px;
+    top: 296px;
+    left: 700px;
+    transform: scale(1);
+    transform-origin: bottom;
+    animation: journey-level-end-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;
+}
+.journey-level-success-3-green{
+    position: absolute;
+    width: 610px;
+    height: 653px;
+    top: 296px;
+    left: 663px;
+    transform: scale(1);
+    transform-origin: bottom;
+    animation: journey-level-end-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;
+}
+.journey-level-success-3-red{
+    position: absolute;
+    width: 582px;
+    height: 630px;
+    top: 296px;
+    left: 677px;
+    transform: scale(1);
+    transform-origin: bottom;
+    animation: journey-level-end-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;
+}
+.journey-level-success-3-yellow{
+    position: absolute;
+    width: 588px;
+    height: 679px;
+    top: 296px;
+    left: 675px;
+    transform: scale(1);
+    transform-origin: bottom;
+    animation: journey-level-end-animation 800ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 100ms;
+}
+.journey-level-fail-1-blue,
+.journey-level-fail-2-blue,
+.journey-level-fail-3-blue
+{
+    position: absolute;
+    width: 475px;
+    height: 609px;
+    top: 307px;
+    left: 701px;
+}
+.journey-level-fail-1-green,
+.journey-level-fail-2-green,
+.journey-level-fail-3-green
+{
+    position: absolute;
+    width: 445px;
+    height: 602px;
+    top: 307px;
+    left: 701px;
+}
+.journey-level-fail-1-red,
+.journey-level-fail-2-red,
+.journey-level-fail-3-red
+{
+    position: absolute;
+    width: 471px;
+    height: 592px;
+    top: 307px;
+    left: 701px;
+}
+.journey-level-fail-1-yellow,
+.journey-level-fail-2-yellow,
+.journey-level-fail-3-yellow
+{
+    position: absolute;
+    width: 459px;
+    height: 593px;
+    top: 307px;
+    left: 701px;
+}
+.journey-congratulation-banner{
+    position: absolute;
+    width: 1123px;
+    height: 630px;
+    left: 175px;
+    top: 136px;
+    transform: scale(0);
+    opacity: .3;
+    animation: journey-congratulation-banner-animation 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 100ms forwards;
+}
+@keyframes journey-congratulation-banner-animation{
+    0%{ opacity: .3; transform: scale(0); }
+    100%{ opacity: 1; transform: scale(1); }
+}
+.journey-play-again-button{
+    position: absolute;
+    width: 625px;
+    height: 179px;
+    left: 424px;
+    top: 794px;
+    opacity: .3;
+    transform: scale(0);
+    animation: journey-congratulation-banner-animation 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 500ms forwards;
+}

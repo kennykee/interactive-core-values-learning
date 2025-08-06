@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Dimbo;
+    src: url("../font/Dimbo-Italic.ttf") format("truetype");
+    font-style: italic;
+}
+@font-face {
+    font-family: Dimbo;
+    src: url("../font/Dimbo-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: VTCAllSkratchedUpOne;
+    src: url("../font/VTCAllSkratchedUpOne.ttf") format("truetype");
+}
